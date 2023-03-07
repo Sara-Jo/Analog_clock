@@ -1,7 +1,13 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
 
 function App() {
-  return <div className="App">hihi</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="App">hihi</div>
+    </ThemeProvider>
+  );
 }
 
 export default App;
