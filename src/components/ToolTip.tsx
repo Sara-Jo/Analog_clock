@@ -33,7 +33,7 @@ const Container = styled.div<{ x: string; y: string }>`
   background-color: ${(props) => props.theme.point};
   color: ${(props) => props.theme.background};
   font-weight: bold;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   position: absolute;
   display: flex;
   align-items: center;
