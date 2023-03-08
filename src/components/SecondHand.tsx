@@ -1,15 +1,21 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { timeState } from "../library/atoms";
 
 export function SecondHand() {
-  return <Container></Container>;
+  const time = useRecoilValue(timeState);
+  const second = time.getSeconds();
+  const degree = (second / 60) * 360;
+
+  return <Container degree={degree} />;
 }
 
-const Container = styled.div`
+const Container = styled.div<{ degree: number }>`
   width: 0.1rem;
   height: 10.5rem;
   background-color: ${(props) => props.theme.point};
   position: absolute;
   bottom: 50%;
   transform-origin: bottom;
-  transform: rotate(170deg);
+  transform: rotate(${(props) => props.degree}deg);
 `;

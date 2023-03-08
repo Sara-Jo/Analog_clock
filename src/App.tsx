@@ -1,4 +1,5 @@
 import React from "react";
+import { RecoilRoot } from "recoil";
 import styled, { ThemeProvider } from "styled-components";
 import { Clock } from "./components/Clock";
 import { theme } from "./styles/theme";
@@ -6,9 +7,11 @@ import { theme } from "./styles/theme";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        <Clock />
-      </Container>
+      <RecoilRoot>
+        <Container>
+          <Clock />
+        </Container>
+      </RecoilRoot>
     </ThemeProvider>
   );
 }
