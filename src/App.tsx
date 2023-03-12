@@ -1,4 +1,3 @@
-import React from "react";
 import { RecoilRoot } from "recoil";
 import styled, { ThemeProvider } from "styled-components";
 import { Clock } from "./components/Clock";

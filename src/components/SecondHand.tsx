@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { timeState } from "../library/atoms";
+import { timeState } from "../recoil/atoms";
 
 export function SecondHand() {
   const time = useRecoilValue(timeState);

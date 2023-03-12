@@ -1,12 +1,12 @@
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { timeState } from "../library/atoms";
+import { timeState } from "../recoil/atoms";
 
 export function MinuteHand() {
   const time = useRecoilValue(timeState);
   const minute = time.getMinutes();
-
   const degree = (minute / 60) * 360;
+
   return <Container degree={degree} />;
 }
 

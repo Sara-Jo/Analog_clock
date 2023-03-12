@@ -1,7 +1,7 @@
 import { MouseEvent, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
-import { timeState } from "../library/atoms";
+import { timeState } from "../recoil/atoms";
 import { HourHand } from "./HourHand";
 import { MinuteHand } from "./MinuteHand";
 import { SecondHand } from "./SecondHand";
@@ -46,8 +46,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: relative; */
-  /* transform: translateY(0px); */
 `;
 
 const CenterPoint = styled.div`
