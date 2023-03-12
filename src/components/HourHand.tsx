@@ -4,18 +4,13 @@ import { timeState } from "../library/atoms";
 
 export function HourHand() {
   const time = useRecoilValue(timeState);
-  const hour = time.getHours();
+  let hour = time.getHours();
+  const minute = time.getMinutes();
 
-  let degree;
-  if (hour >= 12) degree = ((hour - 12) / 12) * 360;
-  else degree = (hour / 12) * 360;
+  if (hour >= 12) hour -= 12;
+  const degree = (hour / 12) * 360 + (minute / 60) * 30;
 
-  return (
-    <>
-      {/* <HandLine /> */}
-      <Container degree={degree} />
-    </>
-  );
+  return <Container degree={degree} />;
 }
 
 const Container = styled.div<{ degree: number }>`
